@@ -1,0 +1,64 @@
+﻿!<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <script>
+        function lightbox(src) {
+            document.getElementById("lightImage").src = src;
+            document.getElementById("specialDiv").style.display = "block";
+        }
+
+        function hideLightbox() {
+            document.getElementById("specialDiv").style.display = "none"
+
+        }
+
+
+
+    </script>
+
+    <style>
+        #specialDiv {
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            background-color: black;
+            opacity: 0.75;
+            display: none;
+        }
+
+        #lightImage {
+            opacity: 2;
+            height: auto;
+            width: 80%;
+            margin-left: 10%;
+            object-fit: contain;
+        }
+
+        #specialDiv button {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            opacity: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="specialDiv">
+        <button onclick="hideLightbox()">&times;</button>
+        <img id="lightImage" />
+    </div>
+
+    <div>
+
+    </div>
+
+
+    <img style="height: 75px; width: 75px;" onclick="lightbox('images/F098B27E-DCE4-40AC-B930-A1C72EFD9DCB.jpeg')" src="images/F098B27E-DCE4-40AC-B930-A1C72EFD9DCB.jpeg" />
+
+</body>
+</html>

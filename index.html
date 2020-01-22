@@ -1,0 +1,108 @@
+﻿<!--  
+Author: Alex Hackbart
+Class name: Software Development 20s
+Teacher Name: Scott Hardman
+Date last Modified: 1/21/2020
+-->
+
+
+
+<DOCTYPE html>  
+       <html>
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/sass-style.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets\css-pages-stylesheet.css" />
+        <style>
+            /*This is meant to take away the scroll bar*/
+            body {
+                overflow: hidden;
+            }
+            /*Just a quick class for the button, makes it look nicer*/
+            .buttonColor {
+                background: #CCAAD3;
+                color: #722894;
+            }
+            /*quick image class, makes it neater*/
+            #image {
+                /*This makes the transtion happen*/
+                opacity: 1;
+                transition: opacity 0.5s ease-in-out;
+            }
+        </style>
+        <script type="text/javascript">
+            var list = ["images/artTree.jpeg", "images/craftDot.jpeg"];
+            var index = 0;
+            var maxindex = 1;
+            function start() {
+                document.getElementById("image").src = list[index];
+            }
+            /* When the page loads up, the image starts off, it then cycles through 2 images and then resets to the first one
+            If the Index is greater than the max index, than reset the index to 0 and start the loop over again.
+            */
+            function next() {
+                index += 1;
+                if (index > maxindex) {
+                    index = 0;
+
+                }
+                document.getElementById("image").style.opacity = 0;
+                setTimeout(setimage, 500);
+            }
+            /* This is the code to make the back button work   */
+            function back() {
+                index -= 1;
+                if (index < 0) {
+                    index = maxindex;
+
+                }
+                document.getElementById("image").style.opacity = 0;
+                setTimeout(setimage, 500);
+            }
+
+            /* This justs sets some image opacity and loop shutff*/
+            function setimage() {
+                document.getElementById("image").style.opacity = 0;
+                document.getElementById("image").src = list[index];
+                document.getElementById("image").style.opacity = 1;
+            }
+
+            //light box, displays the picture in the light box as a block.
+            function openPicture() {
+                document.getElementById("myPicture").style.display = "block";
+            }
+            //when you click the x, the div displays nothing.
+            function closePicture() {
+                document.getElementById("myPicture").style.display = "none";
+            }
+
+
+        </script>
+    </head>
+
+    <body onload="start()">
+
+        <h1 style="text-align:center; color:#722894;">Anna's Arts and Crafts</h1>
+
+        <nav class="flexCenter">
+            <div>
+                <a class="nav-color" href="index.html">Home</a>
+            </div>
+            <div>
+                <a class="nav-color" href="artwork.html">Artwork</a>
+            </div>
+            <div>
+                <a class="nav-color" href="crafts.html">Crafts</a>
+            </div>
+            <div>
+                <a class="nav-color" href="aboutMe.html">About Me</a>
+            </div>
+        </nav>
+
+        <!--This is the slideshow    -->
+        <img id="image" style="height:55vh; width:80vw; margin:0px 10vw ; padding:20px 10px 0px 0px; float: left;" src="images/artTree.jpeg" />
+        <button class="buttonColor angry-vibrate" onclick="back()">Last <br /> Picture</button>
+        <button class="buttonColor angry-vibrate" style="float:right;" onclick="next()">Next <br /> Picture</button>
+    </body>
+</html>

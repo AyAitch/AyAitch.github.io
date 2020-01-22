@@ -1,0 +1,14 @@
+{
+  "name": "zannaproject",
+  "version": "1.0.0",
+  "description": "sass",
+  "main": "index.js",
+    "scripts": {
+    "compile_sass":"node-sass sass/style.scss stylesheets/sass-style.css -w"
+    },
+  "author": "aHackbart",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

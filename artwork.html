@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Artwork</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/sass-style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets\css-pages-stylesheet.css" />
+    <meta charset="utf-8" />
+    <script>
+        function lightbox(src) {
+            document.getElementById("lightImage").src = src;
+            document.getElementById("specialDiv").style.display = "block";
+        }
+
+        function hideLightbox() {
+            document.getElementById("specialDiv").style.display = "none"
+
+        }
+
+    </script>
+    <style>
+        /*This is my div for the lightbox*/
+        #specialDiv {
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            background-color: black;
+            opacity: 1;
+            display: none;
+            top: 0px;
+            left: 0px;
+        }
+
+        #lightImage {
+            height: auto;
+            width: 80%;
+            margin-left: 10%;
+            object-fit: contain;
+        }
+
+        #specialDiv button {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            opacity: 2;
+        }
+
+        @media only screen and (max-width: 500px) {
+
+
+            .pictures {
+                width: 250px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+    <h1 style="text-align:center; color:#722894; width:100%;">Art!</h1>
+    <nav class="flexCenter">
+        <div>
+            <a class="nav-color" href="index.html">Home</a>
+        </div>
+        <div>
+            <a class="nav-color" href="artwork.html">Artwork</a>
+        </div>
+        <div>
+            <a class="nav-color" href="crafts.html">Crafts</a>
+        </div>
+        <div>
+            <a class="nav-color" href="aboutMe.html">About Me</a>
+        </div>
+    </nav>
+
+    <div id="specialDiv">
+        <button onclick="hideLightbox()">&times;</button>
+        <img id="lightImage" />
+    </div>
+
+    <p style="text-align:center">Click on the pictures to expand them.</p>
+
+    <!--All art images-->
+    <img src="images/crayon.jpeg" style="display:inline-block" class="pictures" alt="Picture of Melting crayons" onclick="lightbox('images/crayon.jpeg')" />
+    <img src="images/lips.jpeg" style="display:inline-block" class="pictures" alt="Painted picture of lips" onclick="lightbox('images/lips.jpeg');" />
+    <img src="images/galaxy.jpeg" style="display:inline-block" class="pictures" alt="Galaxy finger-painting" onclick="lightbox('galaxy.jpeg')" />
+    <img src="images/artNight.jpeg" style="display:inline-block" class="pictures" alt="Night sky painting" onclick="lightbox('images/artNight.jpeg')" />
+    <img src="images/artTree.jpeg" style="display:inline-block" class="pictures" alt="Painting of a tree" onclick="lightbox('images/artTree.jpeg')" />
+
+
+
+</body>
+</html>
